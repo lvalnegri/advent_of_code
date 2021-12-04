@@ -12,10 +12,8 @@ for(n in 0:1){
     for(x in 1:ncol(y)){
         xv <- paste0('V', x)
         yx <- yx[get(xv) == eval(parse(text = paste( 
-                                    'as.integer( yx[, sum(get(xv) == 1)]', 
-                                    ifelse(n == 0, '<', '>=') , 
-                                    'yx[, sum(get(xv) == 0)] )' 
-        ))) ]
+                    'as.integer( yx[, sum(get(xv) == 1)]', ifelse(n == 0, '<', '>=') , 'yx[, sum(get(xv) == 0)] )' 
+        ) )) ]
         if(nrow(yx) == 1) break
     }
     out[n + 1] <- bin2int(yx)
