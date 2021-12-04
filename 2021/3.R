@@ -1,3 +1,7 @@
+#####################################################################
+# Advent of Code 2021 - Day 3 - https://adventofcode.com/2021/day/3 #
+#####################################################################
+
 library(data.table)
 y <- fread('./2021/3.csv', colClasses = 'character')
 y <- y[, tstrsplit(V1, split = '')]
