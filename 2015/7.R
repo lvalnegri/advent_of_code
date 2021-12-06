@@ -38,7 +38,6 @@ while(!done){
                 message(' - Operation "', yt, '" succeeded!')
                 yy[idx, pass := TRUE]
                 todo <- todo - 1
-                print()
             }, 
             error = function(e) { NULL }
         )
