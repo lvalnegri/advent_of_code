@@ -7,7 +7,7 @@ y <- fread("sed 's/ -> /,/g' ./2021/5.txt", sep = ',', col.names = c('xs', 'ys',
 my_fun <- function(x) 
                 rbindlist(lapply(
                     1:nrow(x),
-                    function(idx) data.table( x[idx, xs]:x[idx, xe], x[idx, ys]:x[idx, ye] )
+                    \(idx) data.table( x[idx, xs]:x[idx, xe], x[idx, ys]:x[idx, ye] )
                 ))[, .N, .(V1, V2)][N > 1, .N]
 
 # answer part 1

@@ -7,9 +7,12 @@ y <- fread('./2021/3.csv', colClasses = 'character')
 y <- y[, tstrsplit(V1, split = '')]
 
 bin2int <- function(b){ strtoi( paste0( as.integer( b ), collapse = ''), base = 2 ) }
+
+# answer part 1
 rates <- function(n)  bin2int( y[, lapply(.SD, \(x) sum(x == n))] > nrow(y) / 2 )
 rates(0) * rates(1)
 
+# answer part 2
 out <- list()
 for(n in 0:1){
     yx <- copy(y)
